@@ -8,25 +8,39 @@
                 <div class="panel-heading">Apply for admission </div>
 
                 <div class="panel-body">
-					<form>
+
+					@if ($errors->any())
+					    <div class="alert alert-danger">
+					        <ul>
+					            @foreach ($errors->all() as $error)
+					                <li>{{ $error }}</li>
+					            @endforeach
+					        </ul>
+					    </div>
+					@endif
+
+					<form action="/admission_application" method="POST">
+
+					 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
 					  <div class="row">  <!-- Row start -->
                          <div class="col-md-4">
 							  <div class="form-group">
 							    <label for="name">Name</label>
-							    <input type="text" class="form-control" id="name" placeholder="Name">
+							    <input type="text" class="form-control" id="name" placeholder="Name" name="name">
 							  </div>
                          </div>
                          <div class="col-md-4">
 							  <div class="form-group">
 							    <label for="jamb_reg">Jamb Reg Number</label>
-							    <input type="text" class="form-control" id="jamb_reg" placeholder="Jamb Reg Number">
+							    <input type="text" class="form-control" id="jamb_reg" name="jamb_reg" placeholder="Jamb Reg Number">
 							  </div>
                          </div>
                      
                         <div class="col-md-4">
 						  <div class="form-group">
 						    <label for="jamb_score">Jamb Score</label>
-						    <input type="text" class="form-control" id="jamb_score" placeholder="Jamb Score">
+						    <input type="text" class="form-control" id="jamb_score" placeholder="Jamb Score" name="jamb_score">
 						  </div>
                         </div>
 
@@ -70,7 +84,7 @@
                          <div class="col-md-3">
 							  <div class="form-group">
 							    <label for="faculty">Nationality</label>
-							    <select class="form-control" id="exampleSelect1" name="course">
+							    <select class="form-control" id="exampleSelect1" name="nationality">
 							      <option>Electrical/Electronics Engr</option>
 							      <option>Comp. sci</option>
 							    </select>
@@ -80,7 +94,7 @@
                          <div class="col-md-3">
 							  <div class="form-group">
 							    <label for="faculty">Country of residence</label>
-							    <select class="form-control" id="exampleSelect1" name="state">
+							    <select class="form-control" id="exampleSelect1" name="country_of_residence">
 							      <option>Electrical/Electronics Engr</option>
 							      <option>Comp. sci</option>
 							    </select>
@@ -90,7 +104,7 @@
                          <div class="col-md-3">
 							  <div class="form-group">
 							    <label for="dob">Date of Birth</label>
-							    <input type="text" class="form-control" id="dob" placeholder="Date of Birth">
+							    <input type="date" class="form-control" id="dob" placeholder="Date of Birth" name="dob">
 							  </div>
                          </div>
 
@@ -110,14 +124,14 @@
                          <div class="col-md-4">
 							  <div class="form-group">
 							    <label for="mobile">Mobile Number</label>
-							    <input type="text" class="form-control" id="mobile" aria-describedby="mobile" placeholder="Mobile Number">
+							    <input type="text" class="form-control" id="mobile" aria-describedby="mobile" placeholder="Mobile Number" name="mobile">
 							  </div>
 						 </div>
 
                          <div class="col-md-4">
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Email address</label>
-							    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+							    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
 							    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 							  </div>
 						 </div>

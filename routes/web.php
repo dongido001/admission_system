@@ -22,7 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@index');
 
 Route::get('/admission_application', 'AdmissionController@index');
+Route::post('/admission_application', 'AdmissionController@store');
 
 Route::get('/clearance_application', 'ClearanceController@index');
+Route::post('/clearance_application', 'ClearanceController@store');
 
 

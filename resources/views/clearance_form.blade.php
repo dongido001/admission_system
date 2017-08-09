@@ -5,62 +5,100 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Apply for admission </div>
+                <div class="panel-heading text-center"> Clearance Form [ Please upload all relevant document ]</div>
 
                 <div class="panel-body">
-					<form>
-					  <div class="form-group">
-					    <label for="faculty">Faculty/Department</label>
-					    <select class="form-control" id="exampleSelect1">
-					      <option>Electrical/Electronics Engr</option>
-					      <option>Comp. sci</option>
-					    </select>
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleTextarea">Example textarea</label>
-					    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleInputFile">File input</label>
-					    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-					    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-					  </div>
-					  <fieldset class="form-group">
-					    <legend>Radio buttons</legend>
-					    <div class="form-check">
-					      <label class="form-check-label">
-					        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-					        Option one is this and that&mdash;be sure to include why it's great
-					      </label>
+
+					<form method="POST" action="/clearance_application">
+					 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+					@if ($errors->any())
+					    <div class="alert alert-danger">
+					        <ul>
+					            @foreach ($errors->all() as $error)
+					                <li>{{ $error }}</li>
+					            @endforeach
+					        </ul>
 					    </div>
-					    <div class="form-check">
-					    <label class="form-check-label">
-					        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-					        Option two can be something else and selecting it will deselect option one
-					      </label>
-					    </div>
-					    <div class="form-check disabled">
-					    <label class="form-check-label">
-					        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-					        Option three is disabled
-					      </label>
-					    </div>
-					  </fieldset>
-					  <div class="form-check">
-					    <label class="form-check-label">
-					      <input type="checkbox" class="form-check-input">
-					      Check me out
-					    </label>
-					  </div>
+					@endif
+
+
+                      <div class="row">
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">UTME result slip</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">UNN screening acknowledgement slip</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                      </div> 
+
+                                           
+                      <div class="row">
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">Birth certificate</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">Advert/shopping application slip</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                      </div>
+
+                      <div class="row">
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">Students’ personal information printed from the school website</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">All fees receipt</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                      </div>
+
+                      <div class="row">
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">Letter of attestation from applicant sponsor</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">Local government identification certificate</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                      </div>
+
+                      <div class="row">
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">UNN admission list where applicant name is visible</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                         <div class="col-md-6">
+							  <div class="form-group">
+							    <label for="exampleInputFile">Credentials required for admission into the admitted course- A’ Level and O’
+Level</label>
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							  </div>
+                         </div>
+                      </div> 
+
 					  <button type="submit" class="btn btn-primary">Submit</button>
 					</form>
                 </div>
