@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Clearance;
+use Illuminate\Support\Facades\Auth;
+
 
 class ClearanceController extends Controller
 {
@@ -62,6 +64,7 @@ class ClearanceController extends Controller
 
 
       $info = [ 
+                'user_id'   => Auth::id(),
                 'utme_slip' => $request->utme_slip,
                 'unn_screening_acknowledge' => $request->unn_screening_acknowledge,
                 'birth_certificate' => $request->birth_certificate,
@@ -76,7 +79,7 @@ class ClearanceController extends Controller
       $applicaion = Clearance::create($info);
 
 
-     return redirect('clearance_application');
+     return redirect('home');
 
     }
 

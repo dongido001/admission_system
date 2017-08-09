@@ -10,6 +10,7 @@ class Clearance extends Model
 
     protected $fillable = [
 
+        'user_id',
         'utme_slip',
         'unn_screening_acknowledge',
         'birth_certificate',

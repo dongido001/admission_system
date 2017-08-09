@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+
 
 use Illuminate\Http\Request;
 use App\Application;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {

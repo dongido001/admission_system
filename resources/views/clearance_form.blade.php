@@ -64,7 +64,7 @@
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">All fees receipt</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="fees_receipt">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp name="fees_receipt">
 							  </div>
                          </div>
                       </div>
