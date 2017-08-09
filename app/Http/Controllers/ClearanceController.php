@@ -50,6 +50,7 @@ class ClearanceController extends Controller
             'fees_receipt' => 'required',
             'letter_of_attestation' => 'required',
             'local_government_identification_cert' => 'required',
+            'admission_list' => 'required',
             'o_level_cert' => 'required',
         ]);
 

@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
+use App\Application;
 
 class ProfileController extends Controller
 {
@@ -13,7 +15,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('student_profile');
+
+        $data['profile'] = Application::where( 'user_id', Auth::id() )->first();
+
+        return view('student_profile', $data);
     }
 
     /**

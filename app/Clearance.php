@@ -18,6 +18,7 @@ class Clearance extends Model
         'fees_receipt',
         'letter_of_attestation',
         'local_government_identification_cert',
+        'admission_list',
         'o_level_cert',
 
     ];

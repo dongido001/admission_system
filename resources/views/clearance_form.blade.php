@@ -21,18 +21,19 @@
 					    </div>
 					@endif
 
-
+            
+    
                       <div class="row">
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">UTME result slip</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="utme_slip">
 							  </div>
                          </div>
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">UNN screening acknowledgement slip</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="unn_screening_acknowledge">
 							  </div>
                          </div>
                       </div> 
@@ -42,13 +43,13 @@
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">Birth certificate</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="birth_certificate">
 							  </div>
                          </div>
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">Advert/shopping application slip</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="advert">
 							  </div>
                          </div>
                       </div>
@@ -57,13 +58,13 @@
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">Students’ personal information printed from the school website</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="student_personal_information">
 							  </div>
                          </div>
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">All fees receipt</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="fees_receipt">
 							  </div>
                          </div>
                       </div>
@@ -72,13 +73,13 @@
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">Letter of attestation from applicant sponsor</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="letter_of_attestation">
 							  </div>
                          </div>
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">Local government identification certificate</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="local_government_identification_cert">
 							  </div>
                          </div>
                       </div>
@@ -87,14 +88,14 @@
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">UNN admission list where applicant name is visible</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="admission_list">
 							  </div>
                          </div>
                          <div class="col-md-6">
 							  <div class="form-group">
 							    <label for="exampleInputFile">Credentials required for admission into the admitted course- A’ Level and O’
 Level</label>
-							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+							    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="o_level_cert">
 							  </div>
                          </div>
                       </div> 

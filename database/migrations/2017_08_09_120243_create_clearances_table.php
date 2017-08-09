@@ -16,6 +16,7 @@ class CreateClearancesTable extends Migration
         Schema::create('clearances', function (Blueprint $table) {
             $table->increments('id');
             $table->string('utme_slip');
+            $table->integer('user_id');
             $table->string('unn_screening_acknowledge');
             $table->string('birth_certificate');
             $table->string('advert');
