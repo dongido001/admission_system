@@ -29,6 +29,21 @@ class CretaeApplicationsTable extends Migration
             $table->string('mobile',100);
             $table->string('email', 100);
             $table->string('cert', 100);
+            $table->string('subject1', 50);
+            $table->string('grade1', 50);
+            $table->string('subject2', 50);
+            $table->string('grade2', 50);
+            $table->string('subject3', 50);
+            $table->string('grade3', 50);
+            $table->string('subject4', 50);
+            $table->string('grade4', 50);
+            $table->string('subject5', 50);
+            $table->string('grade5', 50);
+            $table->string('subject6', 50);
+            $table->string('grade6', 50);
+            $table->string('subject7', 50);
+            $table->string('grade7', 50);
+            $table->boolean('admitted')->default(0);
             $table->timestamps();
         });
     }

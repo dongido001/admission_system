@@ -144,6 +144,65 @@
 						  </div>
                        </div> <!--End row -->
 
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                             @for( $i = 1; $i < 8; $i++ )
+                               <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+							          <label for="faculty">Subject</label>
+			                       		<select name="subject{{$i}}" class="form-control" required>
+									          <option value="" selected="selected" disabled>--Select--</option>
+									          <option value="Chemistry">Chemistry</option>
+									          <option value="Biology">Biology</option>
+									          <option value="Computer">Computer Studies</option>
+									          <option value="Economics">Economics</option>
+									          <option value="English Language">English Language</option>
+									          <option value="Food and Nutrition">Food and Nutrition</option>
+									          <option value="Further Mathematics">Further Mathematics</option>
+									          <option value="Geography">Geography</option>
+									          <option value="Government">Government</option>
+									          <option value="Literature In English">Literature In English</option>
+									          <option value="Accounting">Accounting</option>
+									          <option value="Mathematics">Mathematics</option>
+									          <option value="Physics">Physics</option>
+									          <option value="Yoruba">Yoruba</option>
+									          <option value="Hausa">Hausa</option>
+									          <option value="Igbo">Igbo</option>
+									          <option value="IRK">IRK</option>
+									          <option value="CRK">CRK</option>
+								        </select>
+								      </div>
+                                  </div>                                  
+
+                               <div class="col-md-6">
+                                    <div class="form-group">
+							          <label for="faculty">Grade</label>
+								          <select name="grade{{$i}}" class="form-control" required>
+								            <option selected disabled>Select </option>
+								            <option value="A1">A1</option>
+								            <option value="B2">B2</option>
+								            <option value="B3">B3</option>
+								            <option value="C4">C4</option>
+								            <option value="C5">C5</option>
+								            <option value="C6">C6</option>
+								            <option value="D7">D7</option>
+								            <option value="E8">E8</option>
+								            <option value="F9">F9</option>
+								            <option value="A/R">A/R</option>
+							              </select>
+								      </div>
+                                  </div>  
+
+                               </div>
+                            @endfor
+
+					        </div>
+
+
+                        </div>
+
 					  <button type="submit" class="btn btn-primary">Submit</button>
 					</form>
                 </div>

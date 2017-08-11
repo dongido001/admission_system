@@ -27,4 +27,17 @@ Route::post('/admission_application', 'AdmissionController@store');
 Route::get('/clearance_application', 'ClearanceController@index');
 Route::post('/clearance_application', 'ClearanceController@store');
 
+//staff login
 
+Route::group(['prefix' => 'staff'], function(){
+
+    // Your routes
+   Route::get('/', 'StaffController@list_applicants');
+
+   Route::get('/list_applicants', 'StaffController@list_applicants');
+
+   Route::get('/view_applicant/{id}', 'StaffController@view_applicant');
+
+   Route::post('/offer_admission', 'StaffController@offer_adamission');
+
+});
