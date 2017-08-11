@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-              @elseif ( !$clearance )
+              @elseif ( $is_admitted AND !$clearance )
 
                 <div class="panel-body text-center">
 
@@ -26,11 +26,18 @@
                     </div>
                 </div> 
 
-              @elseif ( 1 )
+              @elseif ( $is_admitted AND $clearance )
                  
                 <div class="panel-body text-center">
 
-                    <h3> Congratulation!, You are good to go.  </h3>
+                    <h3> Print Admission letter </h3>
+                </div> 
+
+              @else
+                 
+                <div class="panel-body text-center">
+
+                    <h3> Admission is ongoing, please check back later to see of you are admitted. </h3>
                 </div> 
 
               @endif

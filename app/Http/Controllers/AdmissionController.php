@@ -97,7 +97,7 @@ class AdmissionController extends Controller
       $applicaion = Application::create($info);
 
 
-     return view('applicaion_success');
+     return view('application_success');
 
     }
 

@@ -9,7 +9,7 @@
 
                 <div class="panel-body text-center">
 
-                    <h3> Application was successful, please wait for check later to see if you have been admitted.   </h3>
+                    <h3> Application was successful, please check later to see if you have been admitted.   </h3>
                 </div> 
 
             </div>

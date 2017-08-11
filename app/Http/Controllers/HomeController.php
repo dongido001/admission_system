@@ -29,12 +29,14 @@ class HomeController extends Controller
     {
         //checks if user is admited
 
-        if( Admission::where('user_id', Auth::id())->count() ){
+        if( Admission::where('user_id', Auth::id())->count() AND !Clearance::where('user_id', Auth::id())->count() ){
            
-           return redirect('profile');
+           return view('clearance_form');
         }
 
         $data['application'] = Application::where('user_id', Auth::id())->count();
+
+        $data['is_admitted'] = Admission::where('user_id', Auth::id())->count();
         $data['clearance']   = Clearance::where('user_id', Auth::id())->count();
 
         return view('home', $data);
