@@ -160,15 +160,45 @@
 
                   </div> <br> 
 
+                  <div class="row text-center">
+                     <h5> Remark </h5>
 
-                   <form method="POST" action="/staff/offer_admission">
-                      
-                      {{ csrf_field() }}
+                     <b>Jamb score:</b> {{ $applicant->jamb_score }} - 
+                         @if ($applicant->jamb_score >= 200) 
+                          Jamb score is okay
+                         @else
+                          Jamb score is not upto the required score.
+                         @endif
+                         <br> 
 
-                      <input type="hidden" value="{{ $applicant->user_id }}" name="student_id">
-                      <input type="hidden" value="{{ $applicant->course }}" name="dept_id">
-                      <button role="submit" class="btn btn-primary"> Give Admission </button>
-                   </form>
+                         @if ($applicant_waec == 1) 
+                            Waec is okay
+                         @else
+                            Waec is not okay - {{$applicant_waec}}
+                         @endif
+                         <br> 
+
+                  </div>
+                   
+                   @if ($applicant_waec == 1 AND $applicant->jamb_score >= 200) 
+                     <form method="POST" action="/staff/offer_admission">
+                        
+                        {{ csrf_field() }}
+
+                        <input type="hidden" value="{{ $applicant->user_id }}" name="student_id">
+                        <input type="hidden" value="{{ $applicant->course }}" name="dept_id">
+                           <button role="submit" class="btn btn-primary"> Give Admission </button>
+                     </form>
+                   @else
+                    <form method="POST" action="/staff/deny_admission">
+                        
+                        {{ csrf_field() }}
+
+                        <input type="hidden" value="{{ $applicant->user_id }}" name="student_id">
+                        <input type="hidden" value="{{ $applicant->course }}" name="dept_id">
+                           <button role="submit" class="btn btn-danger"> Deny Admission </button>
+                     </form>
+                   @endif
 
                 </div>
             </div>

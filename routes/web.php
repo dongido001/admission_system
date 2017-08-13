@@ -29,7 +29,7 @@ Route::post('/clearance_application', 'ClearanceController@store');
 
 //staff login
 
-Route::group(['prefix' => 'staff'], function(){
+Route::group(['prefix' => 'staff', 'middleware' => ['authStaff'] ], function(){
 
     // Your routes
    Route::get('/', 'StaffController@list_applicants');
@@ -40,4 +40,12 @@ Route::group(['prefix' => 'staff'], function(){
 
    Route::post('/offer_admission', 'StaffController@offer_adamission');
 
+   Route::post('/deny_admission', 'StaffController@deny_adamission');
+
 });
+
+
+Route::post('/staff/login', 'StaffController@staff_login');
+
+Route::get('/staff/login', 'StaffController@show_staff_login');
+Route::get('/staff/show_login', 'StaffController@show_staff_login');

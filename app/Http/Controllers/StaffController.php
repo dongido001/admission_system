@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Application;
+use App\Helpers\AdmissionHelper;
 use App\Admission;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,6 +42,8 @@ class StaffController extends Controller
         
         $data['applicant'] = Application::where('id', $id)->first();
 
+        $data['applicant_waec'] = AdmissionHelper::checkResult( Application::where('id', $id)->first()->toArray() );
+
         return view('staff.view_applicant', $data);
 
     }    
@@ -57,12 +60,54 @@ class StaffController extends Controller
             ]);
 
 
-        Application::where('user_id', Auth::id())->update( ['admitted' => 1] );
+        Application::where('user_id', $request->student_id)->update( ['admitted' => 1] );
+        
+        //You can notify applicant with SMS
 
         return redirect('staff/list_applicants');
 
     }
 
+    public function deny_adamission(Request $request)
+    {
+        //
+
+        Application::where('user_id', $request->student_id)->update( ['admitted' => 0] );
+        
+        //You can notify applicant with sms
+
+        return redirect('staff/list_applicants');
+
+    }
+
+    public function staff_login(Request $request)
+    {
+        //
+        //default pass
+        $user_name = 'admin@unn.edu.ng';
+        $password  = 'admin';
+
+        if( $request->username != $user_name AND $request->password != $password){
+        
+            return redirect('staff/show_login')->with('status', 'Login failed');
+        }
+        //You can notify applicant with sms
+
+        //set session
+        session(['staff' => 'staff']);
+
+        return redirect('staff/list_applicants');
+
+    }
+
+
+    public function show_staff_login(Request $request)
+    {
+        //
+
+        return view('staff.login');
+
+    }
 
     /**
      * Show the form for creating a new resource.
