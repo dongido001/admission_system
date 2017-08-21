@@ -84,12 +84,23 @@ class StaffController extends Controller
     {
         //
         //default pass
-        $user_name = 'admin@unn.edu.ng';
-        $password  = 'admin';
 
-        if( $request->username != $user_name AND $request->password != $password){
-        
-            return redirect('staff/show_login')->with('status', 'Login failed');
+        $access = [
+            
+            'admin@unn.edu.ng' => 'admin',
+
+            'cjdesny@gmail.com' => '123450000',
+
+            'afuluenupopsy@gmail.com' => '123450000'
+        ];
+
+        if( in_array($request->username, array_values($access)) ){
+
+            if( $access[$request->password] != $request->password ){
+
+                return redirect('staff/show_login')->with('status', 'Login failed');
+            }
+    
         }
         //You can notify applicant with sms
 

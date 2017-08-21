@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/get_lga/{state}', 'AdmissionController@get_lga');
+
 Route::get('/profile', 'ProfileController@index');
 
 Route::get('/admission_application', 'AdmissionController@index');

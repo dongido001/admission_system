@@ -141,8 +141,9 @@ class AdmissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function get_lga($state)
     {
         //
+        dd($state);
     }
 }
