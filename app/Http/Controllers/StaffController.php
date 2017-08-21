@@ -100,8 +100,8 @@ class StaffController extends Controller
     
         }
 
-
-        if( @$access[$request->password] != $request->password ){
+die("ddd");
+        if( @$access[$request->username] != $request->password ){
 
             return redirect('staff/show_login')->with('status', 'Login failed');
         }
