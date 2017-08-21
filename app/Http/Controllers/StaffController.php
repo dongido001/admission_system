@@ -94,14 +94,18 @@ class StaffController extends Controller
             'afuluenupopsy@gmail.com' => '123450000'
         ];
 
-        if( in_array($request->username, array_values($access)) ){
-
-            if( $access[$request->password] != $request->password ){
+        if( !in_array($request->username, array_values($access)) ){
 
                 return redirect('staff/show_login')->with('status', 'Login failed');
-            }
     
         }
+
+
+        if( @$access[$request->password] != $request->password ){
+
+            return redirect('staff/show_login')->with('status', 'Login failed');
+        }
+
         //You can notify applicant with sms
 
         //set session
