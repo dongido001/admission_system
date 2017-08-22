@@ -94,14 +94,14 @@ class StaffController extends Controller
             'afuluenupopsy@gmail.com' => '123450000'
         ];
 
-        if( !in_array($request->username, array_keys($access)) ){
+        if( !in_array($request->email, array_keys($access)) ){
 
                 return redirect('staff/show_login')->with('status', 'Login failed');
     
         }
 
 
-        if( @$access[$request->password] != $request->password ){
+        if( @$access[$request->email] != $request->password ){
 
             return redirect('staff/show_login')->with('status', 'Login failed');
         }
