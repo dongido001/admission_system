@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Admissionnotifier;
 use Illuminate\Http\Request;
 use App\Application;
 use App\Helpers\AdmissionHelper;
 use App\Admission;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class StaffController extends Controller
 {
@@ -57,12 +59,22 @@ class StaffController extends Controller
                 "user_id"       =>  $request->student_id,
                 "department_id" =>  $request->dept_id,
                 "department_id" =>  1,
+                "quota"         =>  0,
             ]);
 
 
         Application::where('user_id', $request->student_id)->update( ['admitted' => 1] );
         
         //You can notify applicant with SMS
+         $msg = "Congratulation!, you have been offerd admission. \n, please login to your profile and login.";
+        // use wordwrap() if lines are longer than 70 characters
+        $msg = wordwrap($msg,70);
+
+        // send email
+        mail($request->email,"Admission System",$msg);
+
+        // dd(Mail::to('dongidomed@gmail.com')
+        //                  ->send(new Admissionnotifier()));
 
         return redirect('staff/list_applicants');
 
@@ -75,6 +87,15 @@ class StaffController extends Controller
         Application::where('user_id', $request->student_id)->update( ['admitted' => 0] );
         
         //You can notify applicant with sms
+
+        //You can notify applicant with SMS
+        $msg = "Sorry!, you have not been given admission at this point. Please re-try next season.";
+        // use wordwrap() if lines are longer than 70 characters
+        $msg = wordwrap($msg,70);
+
+        // send email
+        mail($request->email,"Admission System",$msg);
+
 
         return redirect('staff/list_applicants');
 

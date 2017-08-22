@@ -187,6 +187,7 @@
 
                         <input type="hidden" value="{{ $applicant->user_id }}" name="student_id">
                         <input type="hidden" value="{{ $applicant->course }}" name="dept_id">
+                        <input type="hidden" value="{{ $applicant->email }}" name="email">
                            <button role="submit" class="btn btn-primary"> Give Admission </button>
                      </form>
                    @else
@@ -196,6 +197,7 @@
 
                         <input type="hidden" value="{{ $applicant->user_id }}" name="student_id">
                         <input type="hidden" value="{{ $applicant->course }}" name="dept_id">
+                        <input type="hidden" value="{{ $applicant->email }}" name="email">
                            <button role="submit" class="btn btn-danger"> Deny Admission </button>
                      </form>
                    @endif
